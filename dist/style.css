@@ -1,0 +1,270 @@
+html {
+  font-size: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 376px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Red Hat Text', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  background-color: #1e1f29;
+  background-image: url("/images/pattern-hills.svg"), url("/images/bg-stars.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom, center;
+}
+
+.container {
+  padding-top: 8.75rem;
+}
+
+h1, h2, p, small {
+  margin: 0;
+}
+
+a:not(:last-child) {
+  margin-right: 1.875rem;
+}
+
+.title {
+  color: white;
+  font-size: 1.1875rem;
+  text-transform: uppercase;
+  letter-spacing: .5625rem;
+  margin-bottom: 6.875rem;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--jc {
+  justify-content: center;
+}
+
+.flex--jcfs {
+  justify-content: flex-start;
+}
+
+.flex--jcfe {
+  justify-content: flex-end;
+}
+
+.flex--jsb {
+  justify-content: space-between;
+}
+
+.flex--ai {
+  align-items: center;
+}
+
+h2 {
+  color: #8486a9;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: .375rem;
+}
+
+.square {
+  max-width: 10.42rem;
+  max-height: 5rem;
+  padding: 1rem 1.71rem 0 1.71rem;
+  background: #2C2C44;
+  border-radius: 7px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1px;
+}
+
+@media (max-width: 376px) {
+  .square {
+    padding: .833rem 1.166rem 0 1.166rem;
+  }
+}
+
+.square > h1 {
+  color: #D3506F;
+  font-size: 4.78rem;
+  letter-spacing: unset;
+  transform: translateY(50%);
+  margin-top: -3.14rem;
+}
+
+@media (max-width: 376px) {
+  .square > h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.square::before {
+  content: "";
+  position: absolute;
+  background-color: #191a24;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  bottom: -.5rem;
+  left: -.5rem;
+}
+
+.square::after {
+  content: "";
+  position: absolute;
+  background-color: #191a24;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  bottom: -.5rem;
+  right: -.5rem;
+}
+
+.square__flipped {
+  max-width: 10.42rem;
+  max-height: 5rem;
+  padding: 0 1.71rem 1rem 1.71rem;
+  background: #343650;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+  transform-origin: 0% 0%;
+}
+
+@media (max-width: 376px) {
+  .square__flipped {
+    padding: 0 1.166rem .833rem 1.166rem;
+  }
+}
+
+.square__flipped > h1 {
+  color: #fb6087;
+  font-size: 4.78rem;
+  letter-spacing: unset;
+  transform: translateY(-50%);
+  margin-bottom: -3.14rem;
+}
+
+@media (max-width: 376px) {
+  .square__flipped > h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.square__flipped::before {
+  content: "";
+  position: absolute;
+  background-color: #191a24;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  top: -.5rem;
+  left: -.5rem;
+}
+
+.square__flipped::after {
+  content: "";
+  position: absolute;
+  background-color: #191a24;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  top: -.5rem;
+  right: -.5rem;
+}
+
+.item {
+  text-align: center;
+  max-width: 10.42rem;
+  max-height: 5rem;
+}
+
+.item:not(:last-child) {
+  margin-right: 2.28rem;
+}
+
+@media (max-width: 376px) {
+  .item:not(:last-child) {
+    margin-right: 1.071rem;
+  }
+}
+
+.time__group {
+  min-width: 10.42rem;
+  min-height: 8.5rem;
+  background: #191a24;
+  border-radius: 7px;
+  box-shadow: 0px 10px #191a24;
+  margin-bottom: 1.25rem;
+}
+
+.social__links {
+  bottom: 0;
+  position: absolute;
+  padding-bottom: 4.375rem;
+  width: 100%;
+}
+
+.relative {
+  position: relative;
+  perspective: 200px;
+}
+
+.top_days, .top_hours, .top_minutes, .top_seconds {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+
+.top_days > .square, .top_hours > .square, .top_minutes > .square, .top_seconds > .square {
+  transform-origin: 50% 100%;
+  transition: transform 500ms ease-in;
+  opacity: 1;
+}
+
+.top_days > .square__flipped, .top_hours > .square__flipped, .top_minutes > .square__flipped, .top_seconds > .square__flipped {
+  transition: transform 500ms ease-in;
+  transform: rotateX(81deg);
+  opacity: 0;
+}
+
+.bottom_days, .bottom_hours, .bottom_minutes, .bottom_seconds {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+}
+
+.flip {
+  transform: rotateX(-100deg);
+}
+
+.flip_bottom {
+  transform: rotateX(0deg) !important;
+  opacity: 1 !important;
+}
+
+.opace {
+  opacity: 0 !important;
+}
+/*# sourceMappingURL=style.css.map */

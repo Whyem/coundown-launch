@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <title>Frontend Mentor | Launch countdown timer</title>
+
+  
+</head>
+<body>
+
+ <div class="container flex flex--jc">
+  <div class="wrapper">
+    <h1 class="title">We're launching soon</h1>
+    
+    <div class="timer flex flex--jc flex--ai">
+      <div class="item">
+        <div class="time__group">
+          
+          <div class="relative">
+            <div class="top_days">
+              <div class="square"><h1 id="days_top_front">11</h1></div>
+              <div class="square__flipped"><h1 id="days_top_back">10</h1></div>
+            </div>
+  
+            <div class="bottom_days">
+              <div class="square"><h1 id="days_bottom_front">10</h1></div>
+            <div class="square__flipped"><h1 id="days_bottom_back">11</h1></div>
+            </div>
+          </div>
+          
+        </div>
+
+        <h2>Days</h2>
+      </div>
+
+      <div class="item">
+        <div class="time__group">
+          
+          <div class="relative">
+            <div class="top_hours">
+              <div class="square"><h1 id="hours_top_front"></h1></div>
+              <div class="square__flipped"><h1 id="hours_top_back"></h1></div>
+            </div>
+  
+            <div class="bottom_hours">
+              <div class="square"><h1 id="hours_bottom_front">07</h1></div>
+            <div class="square__flipped"><h1 id="hours_bottom_back">08</h1></div>
+            </div>
+          </div>
+          
+        </div>
+
+        <h2>Hours</h2>
+      </div>
+
+      <div class="item">
+        <div class="time__group">
+          
+          <div class="relative">
+            <div class="top_minutes">
+              <div class="square"><h1 id="minutes_top_front"></h1></div>
+              <div class="square__flipped"><h1 id="minutes_top_back"></h1></div>
+            </div>
+  
+            <div class="bottom_minutes">
+              <div class="square"><h1 id="minutes_bottom_front">07</h1></div>
+            <div class="square__flipped"><h1 id="minutes_bottom_back">08</h1></div>
+            </div>
+          </div>
+          
+        </div>
+
+        <h2>minutes</h2>
+      </div>
+
+      <div class="item">
+        <div class="time__group">
+          
+          <div class="relative">
+            <div class="top_seconds">
+              <div class="square"><h1 id="seconds_top_front"></h1></div>
+              <div class="square__flipped"><h1 id="seconds_top_back"></h1></div>
+            </div>
+  
+            <div class="bottom_seconds">
+              <div class="square"><h1 id="seconds_bottom_front"></h1></div>
+            <div class="square__flipped"><h1 id="seconds_bottom_back"></h1></div>
+            </div>
+          </div>
+          
+        </div>
+
+        <h2>seconds</h2>
+      </div>      
+      
+    </div>
+  </div> 
+  
+ </div>
+
+ <footer>
+   <div class="social__links flex flex--ai flex--jc">
+    <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+    <a href="#"><img src="images/icon-pinterest.svg" alt="Pinterest"></a>
+    <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+   </div>
+</footer>
+  
+</body>
+
+<script src="app/scripts/script.js"></script>
+</html>
