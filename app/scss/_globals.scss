@@ -26,10 +26,18 @@ body{
     background-size: contain;
     background-position: bottom, center;
 
+    @include breakpoint-down(){
+        background-size: 979px 192px, contain;
+        background-position: bottom right, center;
+    }
 }
 
 .container{
     padding-top: 8.75rem;
+
+    @include breakpoint-down(){
+        padding-top: 12.25rem;
+    }
 }
 
 h1, h2, p, small{
@@ -48,6 +56,12 @@ a{
     text-transform: uppercase;
     letter-spacing: .5625rem;
     margin-bottom: 6.875rem;
+
+    @include breakpoint-down(){
+        width: 30ch;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
 }
 
 .wrapper{
@@ -93,8 +107,6 @@ h2{
 .square{
     max-width: 10.42rem;
     max-height: 5rem;
-    //padding: 1rem 2.642rem 0 2.642rem;
-    padding: 1rem 1.71rem 0 1.71rem;
     background: $darkenedDarkDesaturatedBlue;
     border-radius: 7px;
     text-align: center;
@@ -103,7 +115,9 @@ h2{
     margin-bottom: 1px;
 
     @include breakpoint-down() {
-        padding: .833rem 1.166rem 0 1.166rem;        
+        padding: .833rem 1.166rem 0 1.166rem;
+        min-width: 5.75rem;
+        min-height: 2.875rem;         
     }
     
     > h1{
@@ -111,10 +125,11 @@ h2{
         font-size: 4.78rem;
         letter-spacing: unset;
         transform: translateY(50%);
-        margin-top: -3.14rem;
+        margin-top: -2.2rem;
 
         @include breakpoint-down() {
-            font-size: 2.5rem;     
+            font-size: 2.5rem; 
+            margin-top: -1.2rem;    
         }
     }
 
@@ -144,7 +159,6 @@ h2{
     &__flipped{
         max-width: 10.42rem;
         max-height: 5rem;
-        // padding: 0 2.642rem 1rem 2.642rem ;
         padding: 0 1.71rem 1rem 1.71rem;
         background: $darkDesaturatedBlue;
         text-align: center;
@@ -154,7 +168,9 @@ h2{
         transform-origin: 0% 0%;
         
         @include breakpoint-down() {
-            padding: 0 1.166rem .833rem 1.166rem;        
+            padding: 0 1.166rem .833rem 1.166rem;  
+            min-width: 5.75rem;
+            min-height: 2.875rem;      
         }
 
         > h1{
@@ -201,10 +217,15 @@ h2{
     &:not(:last-child){
         margin-right: 2.28rem;
     }
+    
+    @include breakpoint-down(){
+        max-width: 4.92rem;
+        max-height: 4.92rem;
+    }
 
     @include breakpoint-down() {
         &:not(:last-child){
-            margin-right: 1.071rem;
+            margin-right: 2rem;
         }     
     }
 
@@ -217,6 +238,11 @@ h2{
     border-radius: 7px;
     box-shadow: 0px 10px $veryDark;
     margin-bottom: 1.25rem;
+
+    @include breakpoint-down(){
+        min-width: 5.75rem;
+        min-height: 5.66rem;
+    }
 }
 
 .social__links{
@@ -224,6 +250,16 @@ h2{
     position: absolute;
     padding-bottom: 4.375rem;
     width: 100%;
+}
+
+i{
+    color: #8786A6;
+    transition: color 300ms ease-in-out;
+    font-size: 1.85rem;
+
+    &:hover{
+        color: $softRed;
+    }
 }
 
 .relative{

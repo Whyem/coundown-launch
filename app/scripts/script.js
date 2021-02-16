@@ -30,29 +30,12 @@ $(document).ready(function(){
             hours2 = 0;
         }
           
-        // Result is output to the specific element
-
-            if(i==0){
-            $("#seconds_top_front").text(('0' + seconds).slice(-2));
-            $("#seconds_top_back").text(('0' + (seconds2)).slice(-2));
-            $("#seconds_bottom_front").text(('0' + (seconds2)).slice(-2));
-            $("#seconds_bottom_back").text(('0' + seconds).slice(-2));
-        
-            $("#minutes_top_front").text(('0' + minutes).slice(-2));
-            $("#minutes_top_back").text(('0' + (minutes2)).slice(-2));
-            $("#minutes_bottom_front").text(('0' + (minutes2)).slice(-2));
-            $("#minutes_bottom_back").text(('0' + minutes).slice(-2));
-       
-            $("#hours_top_front").text(('0' + hours).slice(-2));
-            $("#hours_top_back").text(('0' + (hours2)).slice(-2));
-            $("#hours_bottom_front").text(('0' + (hours2)).slice(-2));
-            $("#hours_bottom_back").text(('0' + hours).slice(-2));
-        
-            $("#days_bottom_front").text(('0' + (days2)).slice(-2));
-            $("#days_top_back").text(('0' + (days2)).slice(-2));
-            $("#days_bottom_back").text(('0' + days).slice(-2));
-            $("#days_top_front").text(('0' + days).slice(-2));
-            }
+        if(i==0){
+            setTime(seconds,seconds2,"seconds");
+            setTime(minutes, minutes2 , "minutes");
+            setTime(hours, hours2 , "hours");
+            setTime(days, days2 , "days");
+        }
             
    
         if(seconds == 0){
@@ -104,31 +87,19 @@ function animate(seconds, hours, minutes, days,cat){
 
 
         if(cat=="seconds"){
-            $("#seconds_top_front").text(('0' + seconds).slice(-2));
-            $("#seconds_top_back").text(('0' + (seconds2)).slice(-2));
-            $("#seconds_bottom_front").text(('0' + (seconds2)).slice(-2));
-            $("#seconds_bottom_back").text(('0' + seconds).slice(-2));
+            setTime(seconds,seconds2,"seconds");
         }
 
         else if(cat == "minutes"){
-            $("#minutes_top_front").text(('0' + minutes).slice(-2));
-            $("#minutes_top_back").text(('0' + (minutes2)).slice(-2));
-            $("#minutes_bottom_front").text(('0' + (minutes2)).slice(-2));
-            $("#minutes_bottom_back").text(('0' + minutes).slice(-2));
+            setTime(minutes, minutes2 , "minutes");
         }
 
         else if(cat == "hours"){
-            $("#hours_top_front").text(('0' + hours).slice(-2));
-            $("#hours_top_back").text(('0' + (hours2)).slice(-2));
-            $("#hours_bottom_front").text(('0' + (hours2)).slice(-2));
-            $("#hours_bottom_back").text(('0' + hours).slice(-2));
+            setTime(hours, hours2 , "hours");
         }
 
         else{
-            $("#days_bottom_front").text(('0' + (days2)).slice(-2));
-            $("#days_top_back").text(('0' + (days2)).slice(-2));
-            $("#days_bottom_back").text(('0' + days).slice(-2));
-            $("#days_top_front").text(('0' + days).slice(-2));
+           setTime(days, days2 , "days");
         }
         
 
@@ -145,4 +116,13 @@ function animate(seconds, hours, minutes, days,cat){
         }, 500);  
            
     }, 500);
+}
+
+
+//Fills the values in the corresponding h1 tags
+function setTime(current, before , cat){
+    $("#"+ cat +"_top_front").text(('0' + current).slice(-2));
+    $("#"+ cat +"_top_back").text(('0' + before).slice(-2));
+    $("#"+ cat +"_bottom_front").text(('0' + before).slice(-2));
+    $("#"+ cat +"_bottom_back").text(('0' + current).slice(-2));
 }
